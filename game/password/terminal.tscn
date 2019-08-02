@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://password/terminal.gd" type="Script" id=1]
+[ext_resource path="res://password/jjbid5do.bmp" type="Texture" id=2]
+
+
+[node name="terminal" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="lineedit" type="LineEdit" parent="."]
+margin_left = 372.022
+margin_top = 285.191
+margin_right = 881.022
+margin_bottom = 335.191
+secret = true
+
+[node name="sprite" type="Sprite" parent="lineedit"]
+position = Vector2( -66.8071, 24.6134 )
+scale = Vector2( 0.167839, 0.167839 )
+texture = ExtResource( 2 )
