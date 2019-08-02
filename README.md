@@ -1,2 +1,2 @@
 # gmtk19
-entry for gmtk 2019
+entry for gmtk 2019.
