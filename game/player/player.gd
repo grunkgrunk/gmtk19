@@ -23,4 +23,11 @@ func _process(delta):
 		dir.x = 1
 	move_and_slide(dir.normalized()*speed)
 	
+	if Input.is_action_just_pressed("interact"):
+		for d in $area.get_overlapping_areas():
+			if d.is_in_group("interactable"):
+				d.interact()
+				
+	
+
 
