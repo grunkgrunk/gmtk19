@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://high_low.gd" type="Script" id=1]
+[ext_resource path="res://number_guesser/high_low.gd" type="Script" id=1]
+
 
 [node name="number_guess" type="Node2D"]
 
