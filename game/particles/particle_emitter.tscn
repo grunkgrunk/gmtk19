@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://particle_emitter.gd" type="Script" id=1]
+[ext_resource path="res://particles/confetti.tscn" type="PackedScene" id=2]
+
+[node name="particle_emitter" type="Node2D"]
+position = Vector2( 131.063, 89.8196 )
+script = ExtResource( 1 )
+particle = ExtResource( 2 )
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 0.01
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
