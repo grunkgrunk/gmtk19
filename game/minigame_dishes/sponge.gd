@@ -26,7 +26,7 @@ func _process(delta):
 
 	if(Input.is_action_pressed("ui_left")):
 		angle -= speed
-		print(angle)
+
 	if(Input.is_action_pressed("ui_right")):
 		angle += speed
 	if(Input.is_action_just_pressed("ui_up")):
@@ -43,7 +43,7 @@ func wash():
 	var fin = to_cen*2 + position
 	tween.interpolate_property(self,'position',ini,fin,0.5,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT,0)
 	tween.start()
-	print(ini,fin)
+
 
 func _on_Area2D_area_entered(area):
 	var s = area.get_parent()
@@ -56,6 +56,6 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Tween_tween_completed(object, key):
-	print("done")
+
 	angle += PI
 	moving = false

@@ -26,7 +26,6 @@ func down():
 	$tween.start()
 
 func rot_complete(a,b):
-	print(rotation)
 	if rotation_degrees == up_rot:
 		down()
 	if rotation_degrees == down_rot:

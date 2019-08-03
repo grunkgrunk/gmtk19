@@ -134,4 +134,3 @@ autostart = true
 
 [node name="minigame_tween" type="Tween" parent="."]
 [connection signal="timeout" from="ui/timer_label/timer" to="." method="_on_timer_timeout"]
-[connection signal="tween_step" from="blur_tween" to="." method="_on_blur_tween_tween_step"]

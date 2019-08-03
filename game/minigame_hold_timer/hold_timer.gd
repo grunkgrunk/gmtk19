@@ -26,5 +26,5 @@ func _process(delta):
 	if(abs(curr_time-hold_time)<threshold):
 		modulate = Color(0,1,0,1)
 	else:
-		print(curr_time)
+
 		modulate = Color(1,1,1,1)

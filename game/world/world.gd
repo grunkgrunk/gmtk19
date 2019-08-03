@@ -43,6 +43,3 @@ func on_minigame_win():
 func _on_timer_timeout():
 	$game_over.show()
 
-
-func _on_blur_tween_tween_step(object, key, elapsed, value):
-	print("step")

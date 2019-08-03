@@ -23,6 +23,6 @@ func _input(ev):
 			how_far += 1
 			if(how_far >= len(correct_list)):
 				emit_signal('won')
-				print("win")
+
 		else:
 			how_far = 0
