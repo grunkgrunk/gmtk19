@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/jar_animation_updated_Animation 1_3.png-70220a8757b2ca8922e66be9c0df72a2.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://new_sprites/jar_animation/jar_animation_updated_Animation 1_3.png"
+dest_files=[ "res://.import/jar_animation_updated_Animation 1_3.png-70220a8757b2ca8922e66be9c0df72a2.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
