@@ -6,6 +6,7 @@ onready var label = $high_low
 func _ready():
 	label.text = "Guess my number! It is between 1 and 10000"
 	$edit.connect("text_entered", self, "_on_LineEdit_text_entered")
+	$edit.grab_focus()
 
 func _on_LineEdit_text_entered(new_text):
 	var num = int(new_text)
