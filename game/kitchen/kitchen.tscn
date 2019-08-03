@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://clean_up/tilemap.tscn" type="PackedScene" id=1]
+
+[node name="kitchen" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 536870912, 0, 65536, 536870912, 0, 131072, 536870912, 0, 196608, 536870912, 0, 262144, 536870912, 0, 327680, 536870912, 0 )
+
