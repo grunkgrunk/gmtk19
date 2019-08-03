@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/simplespirte 16.png-d9a5b895b00a76a53dfba4f3a8e2ee5f.stex"
+path="res://.import/simplespirte 16.png-f06d84a9fd39581747f30cc0431d9439.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/simplespirte 16.png"
-dest_files=[ "res://.import/simplespirte 16.png-d9a5b895b00a76a53dfba4f3a8e2ee5f.stex" ]
+source_file="res://world/simplespirte 16.png"
+dest_files=[ "res://.import/simplespirte 16.png-f06d84a9fd39581747f30cc0431d9439.stex" ]
 
 [params]
 

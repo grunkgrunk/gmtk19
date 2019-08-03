@@ -28,3 +28,4 @@ smoothing_enabled = true
 
 [node name="shape" type="CollisionShape2D" parent="area"]
 shape = SubResource( 2 )
+
