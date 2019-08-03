@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://minigame_rythm/target.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 18.8162
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="target" type="Area2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="target"]
+position = Vector2( 176.849, 322.409 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="target"]
+position = Vector2( 179.837, 312.529 )
+texture = ExtResource( 2 )
+
+[node name="notes" type="Node2D" parent="."]
+position = Vector2( 176.849, 322.409 )
+
+[node name="note" type="Area2D" parent="notes" groups=[
+"note",
+]]
+position = Vector2( 534.166, -5.04984 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="notes/note"]
+texture = ExtResource( 2 )
+
+[node name="note3" type="Area2D" parent="notes" groups=[
+"note",
+]]
+position = Vector2( 719.965, -6.89462 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note3"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="notes/note3"]
+texture = ExtResource( 2 )
+
+[node name="note4" type="Area2D" parent="notes" groups=[
+"note",
+]]
+position = Vector2( 824.565, -9.46677 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note4"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="notes/note4"]
+texture = ExtResource( 2 )
+
+[node name="note5" type="Area2D" parent="notes" groups=[
+"note",
+]]
+position = Vector2( 930.022, -12.8963 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note5"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="notes/note5"]
+texture = ExtResource( 2 )
+
+[node name="note6" type="Area2D" parent="notes" groups=[
+"note",
+]]
+position = Vector2( 1039.02, -14.6544 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note6"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="notes/note6"]
+texture = ExtResource( 2 )
+
+[node name="note2" type="Area2D" parent="notes" groups=[
+"note",
+]]
+position = Vector2( 314.427, -8.60938 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note2"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="notes/note2"]
+texture = ExtResource( 2 )
+[connection signal="area_entered" from="target" to="target" method="_on_target_area_entered"]
+[connection signal="area_exited" from="target" to="target" method="_on_target_area_exited"]
