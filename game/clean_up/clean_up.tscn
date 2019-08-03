@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://clean_up/clean_up.gd" type="Script" id=1]
+[ext_resource path="res://clean_up/trash.png" type="Texture" id=2]
+[ext_resource path="res://clean_up/cannon.gd" type="Script" id=3]
+[ext_resource path="res://clean_up/item.tscn" type="PackedScene" id=4]
+[ext_resource path="res://clean_up/cannon.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 55.6776, 19.3707 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 66.4208, 88.0283 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 576.964, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 375.285 )
+
+[node name="clean_up" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="trash" type="Area2D" parent="." groups=[
+"trash",
+]]
+position = Vector2( 894.502, 506.691 )
+scale = Vector2( 1, 1 )
+
+[node name="trash" type="Sprite" parent="trash"]
+position = Vector2( 4.86731, 6.61322 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trash"]
+position = Vector2( 5.18164, -58.2941 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="trash"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trash/StaticBody2D"]
+position = Vector2( 10.3634, 24.6132 )
+shape = SubResource( 5 )
+
+[node name="bounds" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds"]
+position = Vector2( 467.835, -13.6927 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bounds"]
+position = Vector2( 524.888, 611.609 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bounds"]
+position = Vector2( -13.6927, 303.522 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bounds"]
+position = Vector2( 1031.52, 321.779 )
+shape = SubResource( 4 )
+
+[node name="cannon" type="Position2D" parent="."]
+position = Vector2( 62.6566, 571.661 )
+rotation = 1.5708
+script = ExtResource( 3 )
+bullet = ExtResource( 4 )
+
+[node name="tween" type="Tween" parent="cannon"]
+
+[node name="sprite" type="Sprite" parent="cannon"]
+position = Vector2( -3.20728, -99.0735 )
+rotation = -1.5708
+texture = ExtResource( 5 )
+
+[node name="muzzle" type="Position2D" parent="cannon"]
+position = Vector2( -6.00497, -202.668 )
+
+[node name="reload_timer" type="Timer" parent="cannon"]
+wait_time = 2.0
+one_shot = true
+
+[node name="hooray" type="Label" parent="."]
+visible = false
+margin_left = 490.908
+margin_top = 217.681
+margin_right = 530.908
+margin_bottom = 231.681
+rect_scale = Vector2( 5.96, 5.96 )
+text = "Hooray"
+
+[connection signal="fired" from="cannon" to="." method="_on_cannon_fired"]
+[connection signal="timeout" from="cannon/reload_timer" to="cannon" method="_on_reload_timer_timeout"]
