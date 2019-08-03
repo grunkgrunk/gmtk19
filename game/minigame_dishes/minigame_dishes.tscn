@@ -15,6 +15,7 @@ radius = 482.192
 position = Vector2( 431, 267 )
 
 [node name="plate" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 30.3162, 18.395 )
 scale = Vector2( 0.457143, 0.457143 )
 texture = ExtResource( 1 )
@@ -118,6 +119,7 @@ position = Vector2( 5.25488, -21.0203 )
 shape = SubResource( 1 )
 
 [node name="sponge" type="Sprite" parent="plate"]
+editor/display_folded = true
 position = Vector2( 434.077, 431.246 )
 scale = Vector2( 0.172203, 0.172203 )
 texture = ExtResource( 3 )
