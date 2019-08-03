@@ -4,6 +4,7 @@ signal win
 
 onready var correct_num = get_node("../notes").get_child_count()
 onready var audio = $audio
+onready var wrong = $wrong
 
 var curr_num = 0
 onready var startpos = position
@@ -45,6 +46,7 @@ func _on_target_area_exited(area):
 	if(area.is_in_group("note")):
 		if(canhit):
 			canhit = false
+			wrong.play()
 			
 		
 

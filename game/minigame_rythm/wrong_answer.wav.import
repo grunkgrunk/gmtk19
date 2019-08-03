@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/wrong_answer.wav-0fa42a0c4bbb8b596e047740a83d602d.sample"
+
+[deps]
+
+source_file="res://minigame_rythm/wrong_answer.wav"
+dest_files=[ "res://.import/wrong_answer.wav-0fa42a0c4bbb8b596e047740a83d602d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
