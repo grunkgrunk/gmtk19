@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://player/player.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -16,12 +16,12 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( 0, 3.01468 )
 texture = ExtResource( 2 )
 
 [node name="cam" type="Camera2D" parent="."]
 position = Vector2( 0, 5.55185 )
 current = true
+zoom = Vector2( 0.25, 0.25 )
 smoothing_enabled = true
 
 [node name="area" type="Area2D" parent="."]

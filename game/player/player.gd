@@ -4,7 +4,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 
-var speed = 200
+var tileSize = 16
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,15 +13,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var dir = Vector2()
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_just_pressed("move_up"):
 		dir.y = -1
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_just_pressed("move_down"):
 		dir.y = 1
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_just_pressed("move_left"):
 		dir.x = -1
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_just_pressed("move_right"):
 		dir.x = 1
-	move_and_slide(dir.normalized()*speed)
+	move_and_collide(dir.normalized()*tileSize)
 	
 	if Input.is_action_just_pressed("interact"):
 		for d in $area.get_overlapping_areas():
