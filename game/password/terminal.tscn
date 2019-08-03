@@ -3,7 +3,6 @@
 [ext_resource path="res://password/terminal.gd" type="Script" id=1]
 [ext_resource path="res://password/jjbid5do.bmp" type="Texture" id=2]
 
-
 [node name="terminal" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -18,3 +17,4 @@ secret = true
 position = Vector2( -66.8071, 24.6134 )
 scale = Vector2( 0.167839, 0.167839 )
 texture = ExtResource( 2 )
+

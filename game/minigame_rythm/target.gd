@@ -1,5 +1,7 @@
 extends Area2D
 
+signal win
+
 onready var correct_num = get_node("../notes").get_child_count()
 var curr_num = 0
 onready var startpos = position
@@ -24,6 +26,7 @@ func _process(delta):
 			curr_num = 0
 	if(curr_num >= correct_num):
 		done = true
+		emit_signal("win")
 		
 
 	

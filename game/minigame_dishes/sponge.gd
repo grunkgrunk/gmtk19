@@ -1,5 +1,7 @@
 extends Sprite
 
+signal win
+
 var center
 var radius
 var angle 
@@ -10,16 +12,18 @@ onready var tween = $Tween
 var moving = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	angle = PI/2
 	center = get_parent().position
 	radius = (position - center).length()
+	
+	angle = PI/2
+	var pos = Vector2(cos(angle),sin(angle))*radius + center
+	position = pos
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(moving == true):
 		return
-	if(num_cleaned >= num_stains):
-		return
+
 	if(Input.is_action_pressed("ui_left")):
 		angle -= speed
 		print(angle)
@@ -34,7 +38,6 @@ func _process(delta):
 	
 func wash():
 	moving = true
-	print("Wahs")
 	var ini = position
 	var to_cen = center - position
 	var fin = to_cen*2 + position
@@ -47,6 +50,8 @@ func _on_Area2D_area_entered(area):
 	if(s.is_in_group("stain")):
 		num_cleaned += 1
 		s.queue_free()
+		if(num_cleaned == num_stains):
+			emit_signal("win")
 	
 
 
