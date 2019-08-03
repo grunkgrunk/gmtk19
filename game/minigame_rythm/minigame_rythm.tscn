@@ -11,83 +11,149 @@ radius = 18.8162
 [node name="Node2D" type="Node2D"]
 
 [node name="target" type="Area2D" parent="."]
+<<<<<<< Updated upstream
 script = ExtResource( 1 )
+=======
+position = Vector2( 32, 224 )
+script = ExtResource( 2 )
+>>>>>>> Stashed changes
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="target"]
-position = Vector2( 176.849, 322.409 )
 shape = SubResource( 1 )
 
 [node name="icon" type="Sprite" parent="target"]
+<<<<<<< Updated upstream
 position = Vector2( 179.837, 312.529 )
 texture = ExtResource( 2 )
+=======
+visible = false
+texture = ExtResource( 3 )
+>>>>>>> Stashed changes
 
 [node name="notes" type="Node2D" parent="."]
-position = Vector2( 176.849, 322.409 )
+position = Vector2( 0, 320 )
 
 [node name="note" type="Area2D" parent="notes" groups=[
 "note",
 ]]
-position = Vector2( 534.166, -5.04984 )
+position = Vector2( 515, -98 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note"]
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="notes/note"]
+<<<<<<< Updated upstream
 texture = ExtResource( 2 )
+=======
+visible = false
+texture = ExtResource( 3 )
+>>>>>>> Stashed changes
+
+[node name="audio" type="AudioStreamPlayer" parent="notes/note"]
 
 [node name="note3" type="Area2D" parent="notes" groups=[
 "note",
 ]]
-position = Vector2( 719.965, -6.89462 )
+editor/display_folded = true
+position = Vector2( 608, -98 )
+
+[node name="audio" type="AudioStreamPlayer" parent="notes/note3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note3"]
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="notes/note3"]
+<<<<<<< Updated upstream
 texture = ExtResource( 2 )
+=======
+visible = false
+texture = ExtResource( 3 )
+>>>>>>> Stashed changes
 
 [node name="note4" type="Area2D" parent="notes" groups=[
 "note",
 ]]
-position = Vector2( 824.565, -9.46677 )
+position = Vector2( 415, -98 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note4"]
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="notes/note4"]
+<<<<<<< Updated upstream
 texture = ExtResource( 2 )
+=======
+visible = false
+texture = ExtResource( 3 )
+>>>>>>> Stashed changes
+
+[node name="aduio" type="AudioStreamPlayer" parent="notes/note4"]
 
 [node name="note5" type="Area2D" parent="notes" groups=[
 "note",
 ]]
-position = Vector2( 930.022, -12.8963 )
+position = Vector2( 704, -98 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note5"]
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="notes/note5"]
+<<<<<<< Updated upstream
 texture = ExtResource( 2 )
+=======
+visible = false
+texture = ExtResource( 3 )
+>>>>>>> Stashed changes
+
+[node name="aduio" type="AudioStreamPlayer" parent="notes/note5"]
 
 [node name="note6" type="Area2D" parent="notes" groups=[
 "note",
 ]]
-position = Vector2( 1039.02, -14.6544 )
+position = Vector2( 944, -98 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note6"]
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="notes/note6"]
+<<<<<<< Updated upstream
 texture = ExtResource( 2 )
+=======
+visible = false
+texture = ExtResource( 3 )
+>>>>>>> Stashed changes
+
+[node name="aduio" type="AudioStreamPlayer" parent="notes/note6"]
 
 [node name="note2" type="Area2D" parent="notes" groups=[
 "note",
 ]]
-position = Vector2( 314.427, -8.60938 )
+position = Vector2( 320, -98 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note2"]
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="notes/note2"]
+<<<<<<< Updated upstream
 texture = ExtResource( 2 )
+=======
+visible = false
+texture = ExtResource( 3 )
+
+[node name="aduio" type="AudioStreamPlayer" parent="notes/note2"]
+
+[node name="note7" type="Area2D" parent="notes" groups=[
+"note",
+]]
+position = Vector2( 832, -98 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/note7"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="notes/note7"]
+visible = false
+texture = ExtResource( 3 )
+
+[node name="aduio" type="AudioStreamPlayer" parent="notes/note7"]
+>>>>>>> Stashed changes
 [connection signal="area_entered" from="target" to="target" method="_on_target_area_entered"]
 [connection signal="area_exited" from="target" to="target" method="_on_target_area_exited"]

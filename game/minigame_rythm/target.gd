@@ -3,7 +3,7 @@ extends Area2D
 onready var correct_num = get_node("../notes").get_child_count()
 var curr_num = 0
 onready var startpos = position
-var speed = 10
+var speed = 15
 var canhit = false
 var done = false
 # Called when the node enters the scene tree for the first time.
