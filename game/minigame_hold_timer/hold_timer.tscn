@@ -7,3 +7,4 @@
 position = Vector2( 432.599, 442.122 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+

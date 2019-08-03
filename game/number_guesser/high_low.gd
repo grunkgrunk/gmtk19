@@ -1,32 +1,24 @@
-extends Label
+extends Node2D
 
-
+signal win
 var correct_number = 6572
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
+onready var label = $high_low
 func _ready():
-	text = "Guess my number! It is between 1 and 10000"
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+	label.text = "Guess my number! It is between 1 and 10000"
+	$edit.connect("text_entered", self, "_on_LineEdit_text_entered")
 
 func _on_LineEdit_text_entered(new_text):
 	var num = int(new_text)
 	
 	if(num == correct_number):
-		text = "Yes! How did you know?!"
+		label.text = "Yes! How did you know?!"
+		emit_signal("win")
 	elif(num == 0):
-		text = "Nonono " + new_text + " is not the correct number... it is not even a number..."
+		label.text = "Nonono " + new_text + " is not the correct number... it is not even a number..."
 	else:
-		text = "That is not correct. "
+		label.text = "That is not correct. "
 		if(num < correct_number):
-			text += "My number is larger!"
+			label.text += "My number is larger!"
 		else:
-			text += "My number is smaller!"
+			label.text += "My number is smaller!"
 			
