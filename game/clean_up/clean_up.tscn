@@ -26,6 +26,8 @@ script = ExtResource( 1 )
 ]]
 position = Vector2( 894.502, 506.691 )
 scale = Vector2( 1, 1 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="trash" type="Sprite" parent="trash"]
 position = Vector2( 4.86731, 6.61322 )
@@ -37,6 +39,8 @@ position = Vector2( 5.18164, -58.2941 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="trash"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trash/StaticBody2D"]
 position = Vector2( 10.3634, 24.6132 )
@@ -44,6 +48,8 @@ shape = SubResource( 5 )
 
 [node name="bounds" type="StaticBody2D" parent="."]
 editor/display_folded = true
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounds"]
 position = Vector2( 467.835, -13.6927 )

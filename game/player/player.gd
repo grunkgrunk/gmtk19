@@ -1,33 +1,27 @@
 extends KinematicBody2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var tileSize = 16
-
+var can_move = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not can_move:
+		return
 	var dir = Vector2()
-	if Input.is_action_just_pressed("move_up"):
+	if Input.is_action_just_pressed("ui_up"):
 		dir.y = -1
-	if Input.is_action_just_pressed("move_down"):
+	if Input.is_action_just_pressed("ui_down"):
 		dir.y = 1
-	if Input.is_action_just_pressed("move_left"):
+	if Input.is_action_just_pressed("ui_left"):
 		dir.x = -1
-	if Input.is_action_just_pressed("move_right"):
+	if Input.is_action_just_pressed("ui_right"):
 		dir.x = 1
-	move_and_collide(dir.normalized()*tileSize)
+	move_and_collide(dir*tileSize)
 	
 	if Input.is_action_just_pressed("interact"):
 		for d in $area.get_overlapping_areas():
 			if d.is_in_group("interactable"):
 				d.interact()
-				
-	
-
-
