@@ -3,14 +3,17 @@ extends Area2D
 signal win
 
 onready var correct_num = get_node("../notes").get_child_count()
+onready var audio = $audio
+onready var wrong = $wrong
+
 var curr_num = 0
 onready var startpos = position
-var speed = 10
+var speed = 9.5
 var canhit = false
 var done = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	audio.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -22,6 +25,7 @@ func _process(delta):
 			curr_num += 1
 			canhit = false
 		else: 
+			audio.play()
 			position = startpos
 			curr_num = 0
 	if(curr_num >= correct_num):
@@ -40,5 +44,9 @@ func _on_target_area_entered(area):
 
 func _on_target_area_exited(area):
 	if(area.is_in_group("note")):
-		canhit = false
+		if(canhit):
+			canhit = false
+			wrong.play()
+			
+		
 

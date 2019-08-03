@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/birdlick.wav-334c551c226795c4ad3c2d993b8c5d41.sample"
+
+[deps]
+
+source_file="res://minigame_rythm/birdlick.wav"
+dest_files=[ "res://.import/birdlick.wav-334c551c226795c4ad3c2d993b8c5d41.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
