@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://clean_up/clean_up.gd" type="Script" id=1]
-[ext_resource path="res://clean_up/trash.png" type="Texture" id=2]
+[ext_resource path="res://sprites/trashCan.png" type="Texture" id=2]
 [ext_resource path="res://clean_up/cannon.gd" type="Script" id=3]
 [ext_resource path="res://clean_up/item.tscn" type="PackedScene" id=4]
-[ext_resource path="res://clean_up/cannon.png" type="Texture" id=5]
+[ext_resource path="res://clean_up/shoe.png" type="Texture" id=5]
+[ext_resource path="res://clean_up/upg_axe.png" type="Texture" id=6]
+[ext_resource path="res://clean_up/trousers.png" type="Texture" id=7]
+[ext_resource path="res://clean_up/cam.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 55.6776, 19.3707 )
@@ -13,10 +16,63 @@ extents = Vector2( 55.6776, 19.3707 )
 extents = Vector2( 66.4208, 88.0283 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 576.964, 10 )
+extents = Vector2( 3888.57, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 375.285 )
+[sub_resource type="Animation" id=6]
+resource_name = "camera_pan"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("cam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 500, 300 ), Vector2( 1620, -330 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cam:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 2.73208 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 3.2, 3.2 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "return_cam"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("cam:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 0.965936 ),
+"update": 0,
+"values": [ Vector2( 3.2, 3.2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cam:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1620, -300 ), Vector2( 500, 300 ) ]
+}
 
 [node name="clean_up" type="Node2D"]
 script = ExtResource( 1 )
@@ -24,21 +80,22 @@ script = ExtResource( 1 )
 [node name="trash" type="Area2D" parent="." groups=[
 "trash",
 ]]
-position = Vector2( 894.502, 506.691 )
+position = Vector2( 336.748, 506.691 )
 scale = Vector2( 1, 1 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="trash" type="Sprite" parent="trash"]
-position = Vector2( 4.86731, 6.61322 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 2066.39, -91.1657 )
+scale = Vector2( 16, 16 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trash"]
-position = Vector2( 5.18164, -58.2941 )
+position = Vector2( 2052.18, -69.2211 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="trash"]
+position = Vector2( 2047, -10.927 )
 collision_layer = 2
 collision_mask = 2
 
@@ -47,28 +104,15 @@ position = Vector2( 10.3634, 24.6132 )
 shape = SubResource( 5 )
 
 [node name="bounds" type="StaticBody2D" parent="."]
-editor/display_folded = true
 collision_layer = 2
 collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds"]
-position = Vector2( 467.835, -13.6927 )
-shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="bounds"]
 position = Vector2( 524.888, 611.609 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="bounds"]
-position = Vector2( -13.6927, 303.522 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="bounds"]
-position = Vector2( 1031.52, 321.779 )
-shape = SubResource( 4 )
-
 [node name="cannon" type="Position2D" parent="."]
-position = Vector2( 62.6566, 571.661 )
+position = Vector2( 197.139, 400.372 )
 rotation = 1.5708
 script = ExtResource( 3 )
 bullet = ExtResource( 4 )
@@ -76,19 +120,40 @@ bullet = ExtResource( 4 )
 [node name="tween" type="Tween" parent="cannon"]
 
 [node name="sprite" type="Sprite" parent="cannon"]
-position = Vector2( -3.20728, -99.0735 )
+position = Vector2( -79.6499, -116.061 )
 rotation = -1.5708
+scale = Vector2( 8.401, 8.401 )
 texture = ExtResource( 5 )
 
-[node name="muzzle" type="Position2D" parent="cannon"]
-position = Vector2( -6.00497, -202.668 )
+[node name="to" type="Position2D" parent="cannon/sprite"]
+position = Vector2( 14.8242, 24.1789 )
+rotation = 1.5708
+scale = Vector2( 0.119033, 0.119033 )
+
+[node name="from" type="Position2D" parent="cannon/sprite"]
+position = Vector2( 10.4665, 24.2508 )
+rotation = 1.5708
+scale = Vector2( 0.119033, 0.119033 )
+
+[node name="to_kick" type="Sprite" parent="cannon/sprite"]
+position = Vector2( 22.4829, 18.392 )
+rotation = 2.96059e-15
+scale = Vector2( 0.03571, 0.03571 )
+texture = ExtResource( 6 )
+
+[node name="trousers" type="Sprite" parent="cannon"]
+position = Vector2( -2875.54, -50.8712 )
+rotation = -1.5708
+scale = Vector2( 8.884, 100 )
+texture = ExtResource( 7 )
 
 [node name="reload_timer" type="Timer" parent="cannon"]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
+[node name="kick_tween" type="Tween" parent="cannon"]
+
 [node name="hooray" type="Label" parent="."]
-visible = false
 margin_left = 490.908
 margin_top = 217.681
 margin_right = 530.908
@@ -96,5 +161,26 @@ margin_bottom = 231.681
 rect_scale = Vector2( 5.96, 5.96 )
 text = "Hooray"
 
+[node name="cam" type="Camera2D" parent="."]
+position = Vector2( 1620, -330 )
+current = true
+zoom = Vector2( 3.2, 3.2 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_speed = 2.0
+script = ExtResource( 8 )
+
+[node name="animation" type="AnimationPlayer" parent="cam"]
+root_node = NodePath("../..")
+anims/camera_pan = SubResource( 6 )
+anims/return_cam = SubResource( 7 )
+
+[node name="timer" type="Timer" parent="cam"]
+wait_time = 2.6
+one_shot = true
+
 [connection signal="fired" from="cannon" to="." method="_on_cannon_fired"]
+[connection signal="fired" from="cannon" to="cam" method="_on_cannon_fired"]
+[connection signal="tween_completed" from="cannon/tween" to="cannon" method="_on_tween_tween_completed"]
 [connection signal="timeout" from="cannon/reload_timer" to="cannon" method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="cam/timer" to="cam" method="_on_timer_timeout"]
