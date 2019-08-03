@@ -1,4 +1,4 @@
-extends Area2D
+extends Sprite
 
 export(String) var game_name
 export(PackedScene) var minigame_scene
@@ -10,5 +10,6 @@ func interact():
 		emit_signal("play_minigame", self)
 
 func win():
-	$CollisionShape2D.disabled = true
+	$minigame_area/CollisionShape2D.disabled = true
 	# also change sprite
+	
