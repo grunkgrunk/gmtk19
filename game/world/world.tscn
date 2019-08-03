@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://world/world.gd" type="Script" id=1]
 [ext_resource path="res://world/minigames.gd" type="Script" id=2]
@@ -15,7 +15,22 @@
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://light_switch.tscn" type="PackedScene" id=14]
 [ext_resource path="res://world/kitchen_floor.tscn" type="PackedScene" id=15]
-[ext_resource path="res://world/timer_label.gd" type="Script" id=16]
+[ext_resource path="res://white.png" type="Texture" id=16]
+[ext_resource path="res://world/timer_label.gd" type="Script" id=17]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float amount : hint_range(0,5);
+
+void fragment() {
+
+	COLOR.rgb = textureLod(SCREEN_TEXTURE,SCREEN_UV,amount).rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/amount = 0.0
 
 [node name="world" type="Node2D"]
 script = ExtResource( 1 )
@@ -73,13 +88,22 @@ position = Vector2( 464, 288 )
 position = Vector2( 528, 288 )
 
 [node name="light_switch" parent="room" instance=ExtResource( 14 )]
+visible = false
 
 [node name="kitchen_floor" parent="room" instance=ExtResource( 15 )]
 visible = false
 position = Vector2( 21.34, 0 )
 
 [node name="minigame_layer" type="CanvasLayer" parent="."]
-editor/display_folded = true
+
+[node name="blur_shader" type="TextureRect" parent="minigame_layer"]
+material = SubResource( 2 )
+margin_left = -17.827
+margin_top = -8.23476
+margin_right = 46.173
+margin_bottom = 55.7653
+rect_scale = Vector2( 16.9072, 9.9631 )
+texture = ExtResource( 16 )
 
 [node name="game" type="Node2D" parent="minigame_layer"]
 
@@ -93,17 +117,21 @@ text = "GAME OVER
 "
 
 [node name="ui" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="timer_label" type="Label" parent="ui"]
 margin_top = 32.0
 margin_right = 40.0
 margin_bottom = 46.0
 rect_scale = Vector2( 6.2, 6.2 )
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="timer" type="Timer" parent="ui/timer_label"]
 wait_time = 60.0
 one_shot = true
 autostart = true
+
+[node name="blur_tween" type="Tween" parent="."]
+
+[node name="minigame_tween" type="Tween" parent="."]
 [connection signal="timeout" from="ui/timer_label/timer" to="." method="_on_timer_timeout"]
+[connection signal="tween_step" from="blur_tween" to="." method="_on_blur_tween_tween_step"]
