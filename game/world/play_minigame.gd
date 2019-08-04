@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 export(String) var game_name
 export(PackedScene) var minigame_scene
