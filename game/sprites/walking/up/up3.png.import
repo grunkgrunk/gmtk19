@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coffee machine.png-e3e8d478640a919ff18766439b567698.stex"
+path="res://.import/up3.png-ba7526040a5dbb63828c98a377196c1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://new_sprites/coffee machine.png"
-dest_files=[ "res://.import/coffee machine.png-e3e8d478640a919ff18766439b567698.stex" ]
+source_file="res://sprites/walking/up/up3.png"
+dest_files=[ "res://.import/up3.png-ba7526040a5dbb63828c98a377196c1c.stex" ]
 
 [params]
 

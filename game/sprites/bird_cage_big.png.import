@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coffee machine.png-e3e8d478640a919ff18766439b567698.stex"
+path="res://.import/bird_cage_big.png-416cf4aa73b0795f3f6a93e05ea56f79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://new_sprites/coffee machine.png"
-dest_files=[ "res://.import/coffee machine.png-e3e8d478640a919ff18766439b567698.stex" ]
+source_file="res://sprites/bird_cage_big.png"
+dest_files=[ "res://.import/bird_cage_big.png-416cf4aa73b0795f3f6a93e05ea56f79.stex" ]
 
 [params]
 
