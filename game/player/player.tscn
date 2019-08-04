@@ -73,7 +73,7 @@ shape = SubResource( 2 )
 script = ExtResource( 3 )
 
 [node name="anim" type="AnimatedSprite" parent="img"]
-position = Vector2( 0, -12.5012 )
+position = Vector2( 0, -14.9706 )
 frames = SubResource( 3 )
 animation = "left"
 

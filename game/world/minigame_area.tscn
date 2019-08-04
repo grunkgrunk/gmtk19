@@ -16,3 +16,4 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="minigame_area"]
 shape = SubResource( 1 )
+

@@ -45,7 +45,7 @@ func _on_target_area_entered(area):
 
 func begin():
 	audio.play()
-	$timer.wait_time = AudioServer.ti + AudioServer.get_output_latency()
+	#$timer.wait_time = AudioServer.ti + AudioServer.get_output_latency()
 	
 func _on_target_area_exited(area):
 	if(area.is_in_group("note")):

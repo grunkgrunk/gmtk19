@@ -6,7 +6,7 @@
 [ext_resource path="res://clean_up/cannon.gd" type="Script" id=4]
 [ext_resource path="res://clean_up/item.tscn" type="PackedScene" id=5]
 [ext_resource path="res://clean_up/shoe.png" type="Texture" id=6]
-[ext_resource path="res://clean_up/upg_axe.png" type="Texture" id=7]
+[ext_resource path="res://sprites/trashBall.png" type="Texture" id=7]
 [ext_resource path="res://clean_up/trousers.png" type="Texture" id=8]
 [ext_resource path="res://clean_up/cam.gd" type="Script" id=9]
 
@@ -127,7 +127,7 @@ bullet = ExtResource( 5 )
 [node name="sprite" type="Sprite" parent="cannon"]
 position = Vector2( -79.6499, -116.061 )
 rotation = -1.5708
-scale = Vector2( 8.401, 8.401 )
+scale = Vector2( 8, 8 )
 texture = ExtResource( 6 )
 
 [node name="to" type="Position2D" parent="cannon/sprite"]
@@ -143,7 +143,6 @@ scale = Vector2( 0.119033, 0.119033 )
 [node name="to_kick" type="Sprite" parent="cannon/sprite"]
 position = Vector2( 22.4829, 18.392 )
 rotation = 2.96059e-15
-scale = Vector2( 0.03571, 0.03571 )
 texture = ExtResource( 7 )
 
 [node name="trousers" type="Sprite" parent="cannon"]
