@@ -1,10 +1,62 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://minigame_hold_timer/hold_timer.gd" type="Script" id=2]
+[ext_resource path="res://minigame_hold_timer/coffee_0.png" type="Texture" id=1]
+[ext_resource path="res://minigame_hold_timer/coffee_1.png" type="Texture" id=2]
+[ext_resource path="res://minigame_hold_timer/coffee_2.png" type="Texture" id=3]
+[ext_resource path="res://minigame_hold_timer/hold_timer.gd" type="Script" id=4]
 
-[node name="hold_timer" type="Sprite"]
-position = Vector2( 432.599, 442.122 )
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
+[sub_resource type="Animation" id=2]
+resource_name = "new_cup"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 3.86374, 1, 8.00001 ),
+"update": 0,
+"values": [ Vector2( 500, 300 ), Vector2( -200, 300 ), Vector2( 500, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:canhold")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 132.514, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="hold_timer" type="AnimatedSprite"]
+position = Vector2( 500, 300 )
+scale = Vector2( 8, 8 )
+frames = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/new_cup = SubResource( 2 )
