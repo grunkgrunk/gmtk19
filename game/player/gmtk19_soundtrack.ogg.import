@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gmtk19_soundtrack.ogg-b8a9a0acd475a3394d57d3d2f326a7d8.oggstr"
+
+[deps]
+
+source_file="res://player/gmtk19_soundtrack.ogg"
+dest_files=[ "res://.import/gmtk19_soundtrack.ogg-b8a9a0acd475a3394d57d3d2f326a7d8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
