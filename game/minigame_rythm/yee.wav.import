@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/yee.wav-5b1cd0173cf3a103ef50998b1779c7ed.sample"
+
+[deps]
+
+source_file="res://minigame_rythm/yee.wav"
+dest_files=[ "res://.import/yee.wav-5b1cd0173cf3a103ef50998b1779c7ed.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
