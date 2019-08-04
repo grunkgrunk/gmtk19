@@ -74,5 +74,4 @@ interact={
 
 [rendering]
 
-environment/default_clear_color=Color( 0.968627, 0.886275, 0.419608, 1 )
 environment/default_environment="res://default_env.tres"

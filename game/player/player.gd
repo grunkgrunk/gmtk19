@@ -2,7 +2,9 @@ extends KinematicBody2D
 
 var tileSize = 16
 var can_move = true
-# Called when the node enters the scene tree for the first time.
+var prev_dir = Vector2()
+onready var anim = $img/anim
+
 func _ready():
 	pass # Replace with function body.
 
@@ -20,12 +22,31 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_right"):
 		dir.x = 1
 	
+	if dir != Vector2():
+		if dir != prev_dir:
+			if dir.y < 0:
+				anim.animation = "up"
+			elif dir.y > 0:
+				anim.animation = "down"
+			
+			if dir.x != 0:
+				anim.animation = "left"
+				anim.flip_h = dir.x > 0
+		else:
+			anim.frame = (anim.frame + 1) % anim.frames.get_frame_count(anim.animation)
+	
+		prev_dir = dir
+	
 	move_and_collide(dir*tileSize)
 	
 	if Input.is_action_just_pressed("interact"):
 		for d in $area.get_overlapping_areas():
 			if d.is_in_group("interactable"):
-				d.owner.interact()
+				var l = d.owner
+				if l.has_method("interact"):
+					l.interact()
+	
+	
 
 func shake(duration,frequency,amplitude):
 	$cam.shake(duration,frequency,amplitude)
