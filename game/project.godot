@@ -23,6 +23,11 @@ config/icon="res://icon.png"
 
 GLOBAL="*res://global.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [importer_defaults]
 
 texture={
