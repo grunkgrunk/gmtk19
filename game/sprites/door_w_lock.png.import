@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coffee machine.png-e3e8d478640a919ff18766439b567698.stex"
+path="res://.import/door_w_lock.png-9a370faf100e8455f86d43018288ed3b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://new_sprites/coffee machine.png"
-dest_files=[ "res://.import/coffee machine.png-e3e8d478640a919ff18766439b567698.stex" ]
+source_file="res://sprites/door_w_lock.png"
+dest_files=[ "res://.import/door_w_lock.png-9a370faf100e8455f86d43018288ed3b.stex" ]
 
 [params]
 

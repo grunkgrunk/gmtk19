@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coffee machine.png-e3e8d478640a919ff18766439b567698.stex"
+path="res://.import/commie_updated.png-2b7cc3605bcfb78a5970c0c71a92fb43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://new_sprites/coffee machine.png"
-dest_files=[ "res://.import/coffee machine.png-e3e8d478640a919ff18766439b567698.stex" ]
+source_file="res://sprites/commie_updated.png"
+dest_files=[ "res://.import/commie_updated.png-2b7cc3605bcfb78a5970c0c71a92fb43.stex" ]
 
 [params]
 
