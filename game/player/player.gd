@@ -29,3 +29,6 @@ func _process(delta):
 
 func shake(duration,frequency,amplitude):
 	$cam.shake(duration,frequency,amplitude)
+	
+func game_over():
+	can_move = false
