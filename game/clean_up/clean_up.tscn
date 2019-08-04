@@ -2,7 +2,7 @@
 
 [ext_resource path="res://clean_up/clean_up.gd" type="Script" id=1]
 [ext_resource path="res://black.png" type="Texture" id=2]
-[ext_resource path="res://sprites/trashCan.png" type="Texture" id=3]
+[ext_resource path="res://sprites/trash.png" type="Texture" id=3]
 [ext_resource path="res://clean_up/cannon.gd" type="Script" id=4]
 [ext_resource path="res://clean_up/item.tscn" type="PackedScene" id=5]
 [ext_resource path="res://clean_up/shoe.png" type="Texture" id=6]
@@ -91,7 +91,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="trash" type="Sprite" parent="trash"]
-position = Vector2( 2066.39, -91.1657 )
+position = Vector2( 2061.73, -11.8992 )
 scale = Vector2( 16, 16 )
 texture = ExtResource( 3 )
 
@@ -176,8 +176,8 @@ anims/return_cam = SubResource( 5 )
 wait_time = 2.6
 one_shot = true
 
-[connection signal="fired" from="cannon" to="." method="_on_cannon_fired"]
 [connection signal="fired" from="cannon" to="cam" method="_on_cannon_fired"]
+[connection signal="fired" from="cannon" to="." method="_on_cannon_fired"]
 [connection signal="tween_completed" from="cannon/tween" to="cannon" method="_on_tween_tween_completed"]
 [connection signal="timeout" from="cannon/reload_timer" to="cannon" method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="cam/timer" to="cam" method="_on_timer_timeout"]

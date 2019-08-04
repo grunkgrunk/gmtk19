@@ -3,10 +3,10 @@
 [ext_resource path="res://minigame_channel/tv.gd" type="Script" id=1]
 [ext_resource path="res://minigame_channel/static.png" type="Texture" id=2]
 [ext_resource path="res://minigame_channel/fireplace.jpg" type="Texture" id=3]
-[ext_resource path="res://sprites/tv/tv_1.png" type="Texture" id=4]
-[ext_resource path="res://sprites/tv/tv_2.png" type="Texture" id=5]
-[ext_resource path="res://sprites/tv/tv_3.png" type="Texture" id=6]
-[ext_resource path="res://sprites/tv/tv_4.png" type="Texture" id=7]
+[ext_resource path="res://sprites/tv/tv1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/tv/tv2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/tv/tv3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/tv/tv4.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -39,7 +39,7 @@ frames = SubResource( 1 )
 position = Vector2( 512, 272 )
 scale = Vector2( 20.5683, 20.5683 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Label" type="Label" parent="."]
