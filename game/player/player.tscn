@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/player.png" type="Texture" id=2]
 [ext_resource path="res://player/sprite.gd" type="Script" id=3]
+[ext_resource path="res://player/cam.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -25,9 +26,9 @@ position = Vector2( 0, 5.55185 )
 current = true
 zoom = Vector2( 0.25, 0.25 )
 smoothing_enabled = true
+script = ExtResource( 4 )
 
 [node name="area" type="Area2D" parent="."]
 
 [node name="shape" type="CollisionShape2D" parent="area"]
 shape = SubResource( 2 )
-
