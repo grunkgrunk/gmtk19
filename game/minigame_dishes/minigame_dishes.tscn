@@ -22,6 +22,7 @@ texture = ExtResource( 2 )
 [node name="dirt" type="Area2D" parent="." groups=[
 "stain",
 ]]
+position = Vector2( -7.39441, 12.5136 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dirt"]
 shape = SubResource( 3 )
@@ -35,7 +36,7 @@ texture = ExtResource( 3 )
 [node name="dirt2" type="Area2D" parent="." groups=[
 "stain",
 ]]
-position = Vector2( 46.2528, -9.52264 )
+position = Vector2( 49.0969, -27.7243 )
 rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dirt2"]
@@ -50,7 +51,7 @@ texture = ExtResource( 3 )
 "stain",
 ]]
 editor/display_folded = true
-position = Vector2( 88.4244, -19.0453 )
+position = Vector2( 111.745, -4.82529 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dirt3"]
 shape = SubResource( 3 )
@@ -64,7 +65,7 @@ texture = ExtResource( 3 )
 "stain",
 ]]
 editor/display_folded = true
-position = Vector2( -51.6942, 6.80188 )
+position = Vector2( -64.2078, 3.95789 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dirt4"]
 shape = SubResource( 3 )
@@ -78,7 +79,7 @@ texture = ExtResource( 3 )
 "stain",
 ]]
 editor/display_folded = true
-position = Vector2( -87.064, 25.8471 )
+position = Vector2( -93.3208, 48.0303 )
 rotation = 3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dirt5"]
