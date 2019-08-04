@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sponge.png-a209a5a387253484522b80770a7f3190.stex"
+path="res://.import/plate1.png-37313b843ea91e9b7af4ab2928a1c997.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame_dishes/sponge.png"
-dest_files=[ "res://.import/sponge.png-a209a5a387253484522b80770a7f3190.stex" ]
+source_file="res://clean_up/plate1.png"
+dest_files=[ "res://.import/plate1.png-37313b843ea91e9b7af4ab2928a1c997.stex" ]
 
 [params]
 
