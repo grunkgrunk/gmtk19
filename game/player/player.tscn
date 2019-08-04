@@ -76,4 +76,3 @@ script = ExtResource( 3 )
 [node name="anim" type="AnimatedSprite" parent="img"]
 frames = SubResource( 3 )
 animation = "left"
-
