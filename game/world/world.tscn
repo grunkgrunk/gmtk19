@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://world/world.gd" type="Script" id=1]
 [ext_resource path="res://particles/particle_emitter.tscn" type="PackedScene" id=2]
@@ -17,7 +17,8 @@
 [ext_resource path="res://light_switch.tscn" type="PackedScene" id=15]
 [ext_resource path="res://world/kitchen_floor.tscn" type="PackedScene" id=16]
 [ext_resource path="res://white.png" type="Texture" id=17]
-[ext_resource path="res://world/timer_label.gd" type="Script" id=18]
+[ext_resource path="res://label.tscn" type="PackedScene" id=18]
+[ext_resource path="res://world/timer_label.gd" type="Script" id=19]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -120,12 +121,8 @@ text = "GAME OVER
 
 [node name="ui" type="CanvasLayer" parent="."]
 
-[node name="timer_label" type="Label" parent="ui"]
-margin_top = 32.0
-margin_right = 40.0
-margin_bottom = 46.0
-rect_scale = Vector2( 6.2, 6.2 )
-script = ExtResource( 18 )
+[node name="timer_label" parent="ui" instance=ExtResource( 18 )]
+script = ExtResource( 19 )
 
 [node name="timer" type="Timer" parent="ui/timer_label"]
 wait_time = 60.0
@@ -136,4 +133,4 @@ autostart = true
 
 [node name="minigame_tween" type="Tween" parent="."]
 
-[connection signal="timeout" from="ui/timer_label/timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ui/timer_label/timer" to="ui/timer_label" method="_on_timer_timeout"]
