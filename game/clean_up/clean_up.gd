@@ -8,4 +8,3 @@ func _on_cannon_fired(a):
 
 func on_cleaned():
 	emit_signal("win")
-	$hooray.show()

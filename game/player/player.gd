@@ -24,4 +24,4 @@ func _process(delta):
 	if Input.is_action_just_pressed("interact"):
 		for d in $area.get_overlapping_areas():
 			if d.is_in_group("interactable"):
-				d.interact()
+				d.owner.interact()

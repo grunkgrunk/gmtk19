@@ -1,24 +1,25 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://clean_up/clean_up.gd" type="Script" id=1]
-[ext_resource path="res://sprites/trashCan.png" type="Texture" id=2]
-[ext_resource path="res://clean_up/cannon.gd" type="Script" id=3]
-[ext_resource path="res://clean_up/item.tscn" type="PackedScene" id=4]
-[ext_resource path="res://clean_up/shoe.png" type="Texture" id=5]
-[ext_resource path="res://clean_up/upg_axe.png" type="Texture" id=6]
-[ext_resource path="res://clean_up/trousers.png" type="Texture" id=7]
-[ext_resource path="res://clean_up/cam.gd" type="Script" id=8]
+[ext_resource path="res://black.png" type="Texture" id=2]
+[ext_resource path="res://sprites/trashCan.png" type="Texture" id=3]
+[ext_resource path="res://clean_up/cannon.gd" type="Script" id=4]
+[ext_resource path="res://clean_up/item.tscn" type="PackedScene" id=5]
+[ext_resource path="res://clean_up/shoe.png" type="Texture" id=6]
+[ext_resource path="res://clean_up/upg_axe.png" type="Texture" id=7]
+[ext_resource path="res://clean_up/trousers.png" type="Texture" id=8]
+[ext_resource path="res://clean_up/cam.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 55.6776, 19.3707 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 66.4208, 88.0283 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 3888.57, 10 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "camera_pan"
 length = 3.0
 tracks/0/type = "value"
@@ -46,7 +47,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 3.2, 3.2 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "return_cam"
 length = 2.0
 tracks/0/type = "value"
@@ -77,18 +78,22 @@ tracks/1/keys = {
 [node name="clean_up" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="black" type="Sprite" parent="."]
+position = Vector2( 821.38, 313.641 )
+scale = Vector2( 241.587, 107.262 )
+texture = ExtResource( 2 )
+
 [node name="trash" type="Area2D" parent="." groups=[
 "trash",
 ]]
 position = Vector2( 336.748, 506.691 )
-scale = Vector2( 1, 1 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="trash" type="Sprite" parent="trash"]
 position = Vector2( 2066.39, -91.1657 )
 scale = Vector2( 16, 16 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trash"]
 position = Vector2( 2052.18, -69.2211 )
@@ -101,7 +106,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trash/StaticBody2D"]
 position = Vector2( 10.3634, 24.6132 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="bounds" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -114,8 +119,8 @@ shape = SubResource( 3 )
 [node name="cannon" type="Position2D" parent="."]
 position = Vector2( 197.139, 400.372 )
 rotation = 1.5708
-script = ExtResource( 3 )
-bullet = ExtResource( 4 )
+script = ExtResource( 4 )
+bullet = ExtResource( 5 )
 
 [node name="tween" type="Tween" parent="cannon"]
 
@@ -123,7 +128,7 @@ bullet = ExtResource( 4 )
 position = Vector2( -79.6499, -116.061 )
 rotation = -1.5708
 scale = Vector2( 8.401, 8.401 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="to" type="Position2D" parent="cannon/sprite"]
 position = Vector2( 14.8242, 24.1789 )
@@ -139,13 +144,13 @@ scale = Vector2( 0.119033, 0.119033 )
 position = Vector2( 22.4829, 18.392 )
 rotation = 2.96059e-15
 scale = Vector2( 0.03571, 0.03571 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="trousers" type="Sprite" parent="cannon"]
 position = Vector2( -2875.54, -50.8712 )
 rotation = -1.5708
 scale = Vector2( 8.884, 100 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="reload_timer" type="Timer" parent="cannon"]
 wait_time = 3.0
@@ -153,27 +158,19 @@ one_shot = true
 
 [node name="kick_tween" type="Tween" parent="cannon"]
 
-[node name="hooray" type="Label" parent="."]
-margin_left = 490.908
-margin_top = 217.681
-margin_right = 530.908
-margin_bottom = 231.681
-rect_scale = Vector2( 5.96, 5.96 )
-text = "Hooray"
-
 [node name="cam" type="Camera2D" parent="."]
-position = Vector2( 1620, -330 )
+position = Vector2( 533.468, 281.174 )
 current = true
-zoom = Vector2( 3.2, 3.2 )
+zoom = Vector2( 1.15339, 1.15339 )
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 smoothing_speed = 2.0
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="animation" type="AnimationPlayer" parent="cam"]
 root_node = NodePath("../..")
-anims/camera_pan = SubResource( 6 )
-anims/return_cam = SubResource( 7 )
+anims/camera_pan = SubResource( 4 )
+anims/return_cam = SubResource( 5 )
 
 [node name="timer" type="Timer" parent="cam"]
 wait_time = 2.6

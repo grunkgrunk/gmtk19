@@ -39,6 +39,8 @@ func return_to_room():
 func on_minigame_win():
 	return_to_room()
 	curr_game.win()
+	$particle_emitter.global_position = $room/player.global_position
+	$particle_emitter.emit(300)
 	
 func _on_timer_timeout():
 	$game_over.show()
