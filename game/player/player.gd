@@ -19,9 +19,16 @@ func _process(delta):
 		dir.x = -1
 	if Input.is_action_just_pressed("ui_right"):
 		dir.x = 1
+	
 	move_and_collide(dir*tileSize)
 	
 	if Input.is_action_just_pressed("interact"):
 		for d in $area.get_overlapping_areas():
 			if d.is_in_group("interactable"):
 				d.owner.interact()
+
+func shake(duration,frequency,amplitude):
+	$cam.shake(duration,frequency,amplitude)
+	
+func game_over():
+	can_move = false
