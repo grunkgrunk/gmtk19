@@ -43,7 +43,9 @@ func on_minigame_win():
 	$particle_emitter.emit(300)
 	
 func _on_timer_timeout():
-	$ui/game_over.show()
+	$game_over.endgame()
 	is_game_over = true
 	player.game_over()
+	
+
 

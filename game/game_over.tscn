@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://game_over.gd" type="Script" id=1]
+[ext_resource path="res://checklist.tscn" type="PackedScene" id=2]
+[ext_resource path="res://label.tscn" type="PackedScene" id=3]
+[ext_resource path="res://font.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://white.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 4 )
+
+[node name="game_over" type="CanvasLayer"]
+script = ExtResource( 1 )
+list = ExtResource( 2 )
+
+[node name="game_over" parent="." instance=ExtResource( 3 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -516.0
+margin_top = -289.0
+margin_right = 504.0
+margin_bottom = 289.0
+custom_fonts/font = SubResource( 1 )
+text = "Oh no!
+your wife and her mother
+ came home to a mess.
+
+Try again. Improve.
+But remember:
+You only have one minute!"
+align = 1
+
+[node name="white" type="Sprite" parent="."]
+visible = false
+position = Vector2( 550, 480 )
+scale = Vector2( 11.4724, 14.9801 )
+texture = ExtResource( 5 )

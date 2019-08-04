@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://world/world.gd" type="Script" id=1]
 [ext_resource path="res://particles/particle_emitter.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://white.png" type="Texture" id=17]
 [ext_resource path="res://label.tscn" type="PackedScene" id=18]
 [ext_resource path="res://world/timer_label.gd" type="Script" id=19]
+[ext_resource path="res://game_over.tscn" type="PackedScene" id=20]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -46,42 +47,42 @@ script = ExtResource( 3 )
 
 [node name="clean_room" parent="room/minigames" instance=ExtResource( 4 )]
 position = Vector2( 560, 256 )
-game_name = "clean_room"
+game_name = "clean your room"
 minigame_scene = ExtResource( 5 )
 
 [node name="channel" parent="room/minigames" instance=ExtResource( 4 )]
 position = Vector2( 608, 320 )
-game_name = "channel"
+game_name = "find channel 27"
 minigame_scene = ExtResource( 6 )
 
 [node name="dishes" parent="room/minigames" instance=ExtResource( 4 )]
 position = Vector2( 464, 336 )
-game_name = "dishes"
+game_name = "do the dishes"
 minigame_scene = ExtResource( 7 )
 
 [node name="rythm" parent="room/minigames" instance=ExtResource( 4 )]
 position = Vector2( 432, 240 )
-game_name = "rythm"
+game_name = "capture the bird"
 minigame_scene = ExtResource( 8 )
 
 [node name="hold_timer" parent="room/minigames" instance=ExtResource( 4 )]
 position = Vector2( 528, 336 )
-game_name = "hold_timer"
+game_name = "make a balloon"
 minigame_scene = ExtResource( 9 )
 
 [node name="lock" parent="room/minigames" instance=ExtResource( 4 )]
 position = Vector2( 624, 256 )
-game_name = "lock"
+game_name = "unlock the door"
 minigame_scene = ExtResource( 10 )
 
 [node name="number_guesser" parent="room/minigames" instance=ExtResource( 4 )]
 position = Vector2( 640, 328 )
-game_name = "number_guesser"
+game_name = "remove the hobo"
 minigame_scene = ExtResource( 11 )
 
 [node name="terminal" parent="room/minigames" instance=ExtResource( 4 )]
 position = Vector2( 496, 248 )
-game_name = "number_guesser"
+game_name = "turn on computer"
 minigame_scene = ExtResource( 12 )
 
 [node name="coffee" parent="room" instance=ExtResource( 13 )]
@@ -97,7 +98,7 @@ visible = false
 visible = false
 position = Vector2( 21.34, 0 )
 
-[node name="minigame_layer" type="CanvasLayer" parent="."]
+[node name="minigame_layer" type="Node2D" parent="."]
 
 [node name="blur_shader" type="TextureRect" parent="minigame_layer"]
 material = SubResource( 2 )
@@ -110,22 +111,13 @@ texture = ExtResource( 17 )
 
 [node name="game" type="Node2D" parent="minigame_layer"]
 
-[node name="game_over" type="Label" parent="."]
-visible = false
-margin_left = 496.0
-margin_top = 288.0
-margin_right = 572.0
-margin_bottom = 319.0
-text = "GAME OVER
-"
-
 [node name="ui" type="CanvasLayer" parent="."]
 
 [node name="timer_label" parent="ui" instance=ExtResource( 18 )]
 script = ExtResource( 19 )
 
 [node name="timer" type="Timer" parent="ui/timer_label"]
-wait_time = 60.0
+wait_time = 5.0
 one_shot = true
 autostart = true
 
@@ -133,4 +125,6 @@ autostart = true
 
 [node name="minigame_tween" type="Tween" parent="."]
 
+[node name="game_over" parent="." instance=ExtResource( 20 )]
 [connection signal="timeout" from="ui/timer_label/timer" to="ui/timer_label" method="_on_timer_timeout"]
+[connection signal="timeout" from="ui/timer_label/timer" to="." method="_on_timer_timeout"]
