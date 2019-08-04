@@ -11,9 +11,8 @@ var blur_time = 0.5
 func _ready():
 	for r in $room/minigames.get_children():
 		r.connect("play_minigame", self, "on_play_minigame")
-	
 	$game_over.connect("restart",self,"on_restart")
-	
+	unblur()
 	
 
 func on_play_minigame(game):
@@ -58,4 +57,6 @@ func unblur():
 	$blur_tween.start()
 
 func on_restart():
-	unblur()
+
+	get_tree().reload_current_scene()
+

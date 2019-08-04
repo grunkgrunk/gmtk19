@@ -41,12 +41,12 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("interact"):
 		for d in $area.get_overlapping_areas():
+			print(d)
 			if d.is_in_group("interactable"):
-				var l = d.owner
-				if l.has_method("interact"):
-					l.interact()
-	
-	
+				if d.has_method("interact"):
+					d.interact()
+				else:
+					d.owner.interact()
 
 func shake(duration,frequency,amplitude):
 	$cam.shake(duration,frequency,amplitude)

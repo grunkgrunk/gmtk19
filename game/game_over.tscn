@@ -32,6 +32,7 @@ margin_top = 10.0
 margin_right = 1020.0
 margin_bottom = 588.0
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Oh no!
 your wife and her mother
  came home to a mess.
@@ -40,3 +41,4 @@ Try again. Improve.
 But remember:
 You only have one minute!"
 align = 1
+

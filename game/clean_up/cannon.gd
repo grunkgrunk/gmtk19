@@ -3,7 +3,7 @@ signal fired
 export(PackedScene) var bullet
 
 var up_rot = 90
-var down_rot = 20
+var down_rot = -10
 var can_shoot = true
 var kick_anim_start = false
 

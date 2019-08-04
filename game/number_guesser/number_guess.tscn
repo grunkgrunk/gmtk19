@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://number_guesser/high_low.gd" type="Script" id=1]
 [ext_resource path="res://label.tscn" type="PackedScene" id=2]
 [ext_resource path="res://font.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://sprites/guy.png" type="Texture" id=4]
+[ext_resource path="res://white.png" type="Texture" id=4]
+[ext_resource path="res://sprites/guy.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
 
 [node name="number_guess" type="Node2D"]
@@ -20,15 +24,56 @@ margin_bottom = 91.0
 custom_fonts/font = SubResource( 1 )
 align = 1
 
+[node name="white6" type="Sprite" parent="."]
+modulate = Color( 0.878431, 0.435294, 0.545098, 1 )
+position = Vector2( 512, 128 )
+scale = Vector2( 2.25905, 0.623339 )
+texture = ExtResource( 4 )
+
 [node name="edit" type="LineEdit" parent="."]
 margin_left = 448.0
 margin_top = 112.0
 margin_right = 576.0
 margin_bottom = 136.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
+caret_blink = true
+
+[node name="whites" type="Node2D" parent="."]
+
+[node name="white2" type="Sprite" parent="whites"]
+modulate = Color( 0.878431, 0.435294, 0.545098, 1 )
+position = Vector2( 512, 112 )
+scale = Vector2( 2.07769, -0.12359 )
+texture = ExtResource( 4 )
+
+[node name="white3" type="Sprite" parent="whites"]
+modulate = Color( 0.878431, 0.435294, 0.545098, 1 )
+position = Vector2( 512, 139.629 )
+scale = Vector2( 2.14404, -0.102763 )
+texture = ExtResource( 4 )
+
+[node name="white4" type="Sprite" parent="whites"]
+modulate = Color( 0.878431, 0.435294, 0.545098, 1 )
+position = Vector2( 448, 128 )
+scale = Vector2( 0.117692, 0.396411 )
+texture = ExtResource( 4 )
+
+[node name="white5" type="Sprite" parent="whites"]
+modulate = Color( 0.878431, 0.435294, 0.545098, 1 )
+position = Vector2( 576, 128 )
+scale = Vector2( 0.157692, 0.43641 )
+texture = ExtResource( 4 )
 
 [node name="guy" type="Sprite" parent="."]
 position = Vector2( 500, 352 )
 scale = Vector2( 15, 15 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
+[node name="timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

@@ -1,39 +1,76 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://minigame_channel/tv.gd" type="Script" id=1]
-[ext_resource path="res://minigame_channel/static.png" type="Texture" id=2]
-[ext_resource path="res://minigame_channel/fireplace.jpg" type="Texture" id=3]
-[ext_resource path="res://sprites/tv/tv1.png" type="Texture" id=4]
-[ext_resource path="res://sprites/tv/tv2.png" type="Texture" id=5]
-[ext_resource path="res://sprites/tv/tv3.png" type="Texture" id=6]
-[ext_resource path="res://sprites/tv/tv4.png" type="Texture" id=7]
-
-
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[ext_resource path="res://sprites/tv/tv1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/tv/tv2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/tv/tv3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/tv/tv4.png" type="Texture" id=5]
+[ext_resource path="res://minigame_channel/num1.png" type="Texture" id=6]
+[ext_resource path="res://minigame_channel/num2.png" type="Texture" id=7]
+[ext_resource path="res://minigame_channel/num3.png" type="Texture" id=8]
+[ext_resource path="res://minigame_channel/num4.png" type="Texture" id=9]
+[ext_resource path="res://minigame_channel/man1.png" type="Texture" id=10]
+[ext_resource path="res://minigame_channel/man2.png" type="Texture" id=11]
+[ext_resource path="res://minigame_channel/man3.png" type="Texture" id=12]
+[ext_resource path="res://minigame_channel/man4.png" type="Texture" id=13]
+[ext_resource path="res://minigame_channel/alien1.png" type="Texture" id=14]
+[ext_resource path="res://minigame_channel/alien2.png" type="Texture" id=15]
+[ext_resource path="res://minigame_channel/alien3.png" type="Texture" id=16]
+[ext_resource path="res://minigame_channel/alien4.png" type="Texture" id=17]
+[ext_resource path="res://minigame_channel/fire1.png" type="Texture" id=18]
+[ext_resource path="res://minigame_channel/fire2.png" type="Texture" id=19]
+[ext_resource path="res://minigame_channel/fire3.png" type="Texture" id=20]
+[ext_resource path="res://minigame_channel/fire4.png" type="Texture" id=21]
+[ext_resource path="res://minigame_channel/gun1.png" type="Texture" id=22]
+[ext_resource path="res://minigame_channel/gun2.png" type="Texture" id=23]
+[ext_resource path="res://minigame_channel/gun3.png" type="Texture" id=24]
+[ext_resource path="res://minigame_channel/gun4.png" type="Texture" id=25]
+[ext_resource path="res://minigame_channel/dance1.png" type="Texture" id=26]
+[ext_resource path="res://minigame_channel/dance2.png" type="Texture" id=27]
+[ext_resource path="res://minigame_channel/dance3.png" type="Texture" id=28]
+[ext_resource path="res://minigame_channel/dance4.png" type="Texture" id=29]
+[ext_resource path="res://black.png" type="Texture" id=30]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "num",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "man",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "alien",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "fire",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "gun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "dance",
 "speed": 5.0
 } ]
 
 [node name="channel" type="Node2D"]
 script = ExtResource( 1 )
-
-[node name="channel" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 527.424, 257.463 )
-scale = Vector2( 1.84488, 1.36934 )
-frames = SubResource( 1 )
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
 
@@ -41,16 +78,17 @@ frames = SubResource( 1 )
 position = Vector2( 512, 272 )
 scale = Vector2( 20.5683, 20.5683 )
 frames = SubResource( 2 )
+animation = "man"
 frame = 2
 playing = true
 
-[node name="Label" type="Label" parent="."]
-margin_left = 400.0
-margin_top = 288.0
-margin_right = 464.0
-margin_bottom = 302.0
-rect_scale = Vector2( 1.76, 1.76 )
-custom_colors/font_color = Color( 0.027451, 1, 0.286275, 1 )
-custom_colors/font_color_shadow = Color( 0.0392157, 0.423529, 0.207843, 1 )
-text = "volume = "
+[node name="black" type="Sprite" parent="."]
+position = Vector2( 512, 284.082 )
+scale = Vector2( -7.83772, 4.96852 )
+texture = ExtResource( 30 )
 
+[node name="timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

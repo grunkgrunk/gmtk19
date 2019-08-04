@@ -11,5 +11,6 @@ func interact():
 
 func win():
 	$minigame_area/CollisionShape2D.disabled = true
+	GLOBAL.minigame_progress[game_name] = true
 	# also change sprite
 	

@@ -10,25 +10,26 @@ var removelist = []
 func _ready():
 	$modulate.modulate = Color(1,1,1,0)
 
-func _process(delta):
-	if(!game_over):
-		return
-	if(Input.is_action_just_pressed("ui_accept")):
-		
-		if(!restart):
-			list()
-		else:
-			game_over = false
-			for i in removelist:
-				i.queue_free()
-			removelist = []
-			$Tween.interpolate_property($modulate,"modulate",Color(1,1,1,1),Color(1,1,1,0),0.5,Tween.TRANS_QUAD,Tween.EASE_IN_OUT)
-			$Tween.start()
-			emit_signal("restart")
-			print("restart")
 
+func _input(event):
+	if !game_over:
+		return
+	
+	if event is InputEventKey and event.pressed:
+			if event.scancode != KEY_ESCAPE:
+				if(!restart):
+					list()
+				else:
+					game_over = false
+					for i in removelist:
+						i.queue_free()
+					removelist = []
+					$Tween.interpolate_property($modulate,"modulate",Color(1,1,1,1),Color(1,1,1,0),0.5,Tween.TRANS_QUAD,Tween.EASE_IN_OUT)
+					$Tween.start()
+					emit_signal("restart")
 
 func endgame():
+	print("end")
 	$Tween.interpolate_property($modulate,"modulate",Color(1,1,1,0),Color(1,1,1,1),0.5,Tween.TRANS_QUAD,Tween.EASE_IN_OUT)
 	$Tween.start()
 	game_over = true
