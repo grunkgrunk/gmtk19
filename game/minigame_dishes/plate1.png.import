@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/goo.png-6c3f42a03ffed8357dd57b57916cf03b.stex"
+path="res://.import/plate1.png-530def06d0a6f89c5eae05b72a7b9b3b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://clean_up/goo.png"
-dest_files=[ "res://.import/goo.png-6c3f42a03ffed8357dd57b57916cf03b.stex" ]
+source_file="res://minigame_dishes/plate1.png"
+dest_files=[ "res://.import/plate1.png-530def06d0a6f89c5eae05b72a7b9b3b.stex" ]
 
 [params]
 

@@ -23,6 +23,11 @@ config/icon="res://icon.png"
 
 GLOBAL="*res://global.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [importer_defaults]
 
 texture={
@@ -74,4 +79,5 @@ interact={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.968627, 0.886275, 0.419608, 1 )
 environment/default_environment="res://default_env.tres"

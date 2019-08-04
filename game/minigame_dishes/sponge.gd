@@ -6,16 +6,16 @@ var center
 var radius
 var angle 
 var speed = 0.1
-var num_stains = 7
+var num_stains = 5
 var num_cleaned = 0
 onready var tween = $Tween
 var moving = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	center = get_parent().position
+	center = get_parent().get_node("plate").position
 	radius = (position - center).length()
 	
-	angle = PI/2
+	angle = -PI/2
 	var pos = Vector2(cos(angle),sin(angle))*radius + center
 	position = pos
 
@@ -46,7 +46,7 @@ func wash():
 
 
 func _on_Area2D_area_entered(area):
-	var s = area.get_parent()
+	var s = area
 	if(s.is_in_group("stain")):
 		num_cleaned += 1
 		s.queue_free()
